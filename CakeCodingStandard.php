@@ -42,7 +42,6 @@ class PHP_CodeSniffer_Standards_Cake_CakeCodingStandard extends PHP_CodeSniffer_
     return  array(
       'Generic/Sniffs/PHP/DisallowShortOpenTagSniff.php',
       'Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php',
-      'Generic/Sniffs/WhiteSpace/',
       'Generic/Sniffs/Formatting/MultipleStatementAlignmentSniff.php',
       'PEAR/Sniffs/Files/LineEndingsSniff.php',
       'PEAR/Sniffs/Functions/FunctionCallArgumentSpacingSniff.php',
