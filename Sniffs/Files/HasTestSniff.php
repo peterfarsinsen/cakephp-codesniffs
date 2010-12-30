@@ -24,11 +24,15 @@ class Cake_Sniffs_Files_HasTestSniff implements PHP_CodeSniffer_Sniff {
  */
 	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr) {
 		$path = $phpcsFile->getFileName();
-		print_r ($path);
 		if (strpos($path, '.test.php') || !strpos($path, '.php')) {
 			return;
 		}
+
 		$testFile = $this->_mapToTest($path);
+		if (!$testFile) {
+			return;
+		}
+
 		if (!file_exists($testFile)) {
       		$phpcsFile->addWarning("No test case found", $stackPtr);
 		}
@@ -37,16 +41,21 @@ class Cake_Sniffs_Files_HasTestSniff implements PHP_CodeSniffer_Sniff {
 /**
  * mapToTest method
  *
- * @param mixed $path
+ * @param string $path
+ * @param string $type
  * @return test file
  * @access protected
  */
-	protected function _mapToTest($path) {
-		$type = $this->_testType($path);
+	protected function _mapToTest($path, $type = null) {
+		if (!$type) {
+			$type = $this->_testType($path);
+		}
+
 		$path = str_replace('.php', '', $path);
 		if ($type === 'core') {
 			return preg_replace('@(.*cake[\\\/])@', '\1tests/cases/', $path) . '.test.php';
 		}
+
 		return preg_replace('@(.*)((?:(?:config|console|controllers|libs|locale|models|plugins|tests|vendors|views|webroot)[\\\/])|app_[-a-z]*$)@', '\1tests/cases/\2', $path) . '.test.php';
 	}
 
