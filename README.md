@@ -26,6 +26,6 @@ To run `phpcs` checks each time you commit a file, you can use the pre-commit ho
 
 # References and Credits
 
-http://lifeisbetter.in/blog/2010/08/09/yet-another-version-of-php-codesniffer-for-cakephp
-https://github.com/venkatrs/Cake_PHP_CodeSniffer
-http://www.sanisoft.com/downloads/cakephp_sniffs
+* [http://lifeisbetter.in/blog/2010/08/09/yet-another-version-of-php-codesniffer-for-cakephp](http://lifeisbetter.in/blog/2010/08/09/yet-another-version-of-php-codesniffer-for-cakephp)
+* [https://github.com/venkatrs/Cake_PHP_CodeSniffer](https://github.com/venkatrs/Cake_PHP_CodeSniffer)
+* [http://www.sanisoft.com/downloads/cakephp_sniffs](http://www.sanisoft.com/downloads/cakephp_sniffs)
